@@ -1,271 +1,282 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org" lang="en-AU">
-	<head>
-		<link rel="me" href="https://mastodon.social/@StephenRBerg">
-		<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap">
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117944748-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-117944748-1');
-		</script>
-		<title>Stephen Berg | Games</title>
-		<meta name="description" content="Stephen Berg | Technical Director at Spunge Games. Game Developer, NES homebrew, and movie collector.">
-		<meta name="keywords" content="Stephen Berg, Spunge Games, Technical Director, Game Developer, NES Homebrew, Movie Collector, 4K, Blu-ray, Xbox, Steam, Discord, Mastodon, Reddit, Bluesky, Threads, TikTok, Twitter, Facebook">
-		<style>
-			body {
-				background-color: #0A0E18;
-				background-image: url('index_files/bg.svg');
-				background-attachment: fixed;
-				background-size: cover;
-			}
-			.profile-image {
-				height: 256px;
+    <head>
+        <link rel="me" href="https://mastodon.social/@StephenRBerg">
+        <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117944748-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-117944748-1');
+        </script>
+        <title>Stephen Berg | Games</title>
+        <meta name="description" content="Stephen Berg | Technical Director at Spunge Games. Game Developer, NES homebrew, and movie collector.">
+        <meta name="keywords" content="Stephen Berg, Spunge Games, Technical Director, Game Developer, NES Homebrew, Movie Collector, 4K, Blu-ray, Xbox, Steam, Discord, Mastodon, Reddit, Bluesky, Threads, TikTok, Twitter, Facebook">
+        <style>
+            body {
+                background-color: #0A0E18;
+                background-image: url('index_files/bg.svg');
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .profile-image {
+                height: 256px;
+                border-radius: 50%;
+                overflow: hidden; /* Ensures the image is clipped to the circle */
+            }
+            
+            .social {
+				background-color: #0a0e1800;
+                display: inline-block;
+                padding: 0;
+                margin: 2px;
+                border: none;
+
+                clip-path: url(#squircle-clip);
+                -webkit-clip-path: url(#squircle-clip);
+                
+                align-content: center;
+                
+                transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            .social img {
+                display: block;  
+                width: 100%;
+                height: 100%;
+            }
+
+            .social-xxxx { width: 54px; height: 54px; }
+            .social-xxx  { width: 48px; height: 48px; }
+            .social-xx   { width: 41px; height: 41px; }
+            .social-x    { width: 32px; height: 32px; }
+
+            .button {
+                cursor: pointer;
+                overflow: hidden; /* Clip any overflow from the image */
+            }
+
+            /* Targets the element cleanly to force the GPU path morphing transition */
+            .social.button:hover {
+                transform: scale(1.2);
 				border-radius: 50%;
-				overflow: hidden; /* Ensures the image is clipped to the circle */
-			}
-			.social {
-			display: inline-block;
-			padding: 2px;
-			border: none;
-			border-radius: 2px;
-			align-content: center;
-			}
+				background-color: #008cff;
+            }
 
-			.social img {
-			display: block;  /* Ensure the image behaves like a block element */
-			width: 44px;
-			height: 44px;
-			}
+            .social.button:active {
+                transform: scale(1.0);
+            }
 
-			.social-xxxx img {
-    		width: 54px;
-    		height: 54px;
-			}
+            .text-base {
+            font-family: 'Bangers', cursive;
+            color: white;
+            }
 
-			.social-xxx img {
-    		width: 48px;
-    		height: 48px;
-			}
+            .text-base a {
+            color: white; /* Default link color */
+            text-decoration: underline;  /* Add underline on hover */
+            }
 
-			.social-xx img {
-    		width: 41px;
-    		height: 41px;
-			}
+            .text-base a:hover {
+            color: white; /* Change color on hover */
+            text-decoration: none; /* Remove underline on hover */
+			background-color: #008cff;
+            }
 
-			.social-x img {
-    		width: 32px;
-    		height: 32px;
-			}
+            .name-text {
+            font-size: 48px;
+            }
 
-			.text-base {
-			font-family: 'Bangers', cursive;
-			color: white;
-			}
+            .title-text {
+            font-size: 30px;
+            }
 
-			.text-base a {
-			color: white; /* Default link color */
-			text-decoration: underline;  /* Add underline on hover */
-			}
+            .td-cell {
+            vertical-align: top;
+            text-align: center;
+            }
 
-			.text-base a:hover {
-			color: white; /* Change color on hover */
-			text-decoration: none; /* Remove underline on hover */
-			}
+            td {
+            background-size: stretch; /* Or 'stretch' */
+            }
 
-			.name-text {
-			font-size: 48px;
-			}
+            .extras {
+            display: inline-block;
+            padding: 0;
+            border: none;
+            border-radius: 2px;
+			background-color: #0a0e1800;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            
+            .extras:hover {
+                transform: scale(1.1);
+				background-color: #008cff;
+            }
 
-			.title-text {
-			font-size: 30px;
-			}
+            .extras img {
+                height: 60px;
+                width: 130px;
+            }
 
-			.td-cell {
-			vertical-align: top;
-			text-align: center;
-			}
-
-			.button {
-			cursor: pointer;
-			transition: transform 0.25s ease-in-out;
-			overflow: hidden;        /* Clip any overflow from the image */
-			}
-
-			.button:hover {
-			transform: scale(1.2);
-			}
-
-			.button:active {
-			transform: scale(1.0);
-			}
-
-			td {
-			background-size: stretch; /* Or 'stretch' */
-			}
-
-			.extras {
-			display: inline-block;
-			padding: 0;
-			border: none;
-			border-radius: 2px;
-			}
-
-			.extras img {
-				height: 60px;
-				width: 130px;
-			}
-
-		</style>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes, minimal-ui">
-	</head>
-	<body>
-		<div>
-			<table width="340px" cellspacing="0" cellpadding="0" style='margin:auto'>
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes, minimal-ui">
+    </head>
+    <body>
+        <div>
+            <table width="340px" cellspacing="0" cellpadding="0" style='margin:auto'>
 				<tr height = "30px"> <!-- Top Edge -->
 					<td background="index_files/Website_03.webp"></td>
-					<td background="index_files/Website_04.webp"></td>
-					<td background="index_files/Website_05.webp"></td>
-				</tr>
-				<tr>
+                    <td background="index_files/Website_04.webp"></td>
+                    <td background="index_files/Website_05.webp"></td>
+                </tr>
+                <tr>
 					<td background="index_files/Untitled-1_07.webp" width="30px"></td> <!-- Left Edge -->
 					<td style='background:#a6503d;'>
-						<table>
-							<tr>
-								<td>
-									<table width=275px style='background:#a6503d;vertical-align:middle;text-align:center;'>
-										<tr>
-											<td class='td-cell'>
-												<img src="index_files/Layout_09.webp" title="I'm a pretty boy" class="profile-image"/>
-											</td>
-										</tr>
-										<tr>
-											<td class='td-cell'>		
-												<span class="name-text text-base no-wrap">Stephen Berg</span><br/>
-												<span class="title-text text-base"> Technical Director</span><br/>
-												<span class="title-text text-base"> <a href="https://www.spungegames.com" target="_new">Spunge Games</a></span><br/><br/>
-											</td>
-										</tr>
-										<tr>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table width=275px style='background:#a6503d;vertical-align:middle;text-align:center;'>
+                                        <tr>
+                                            <td class='td-cell'>
+                                                <img src="index_files/Layout_09.webp" title="I'm a pretty boy" class="profile-image"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class='td-cell'>        
+                                                <span class="name-text text-base no-wrap">Stephen Berg</span><br/>
+                                                <span class="title-text text-base"> Technical Director</span><br/>
+                                                <span class="title-text text-base"> <a href="https://www.spungegames.com" target="_new">Spunge Games</a></span><br/><br/>
+                                            </td>
+                                        </tr>
+                                        <tr>
 											<!-- Professional + Primary Social -->
-											<td class='td-cell'> 
-												<span>
-													<a class="social social-xxxx button" href="https://www.linkedin.com/in/stephenrberg/" target="_new">
-														<img src="index_files/linkedin.svg" alt=Linkedin></a>
-												</span>
-												<span>
-													<a class="social social-xxxx button" href="https://bsky.app/profile/stephenrberg.com" target="_new">
-														<img src="index_files/bluesky.svg" alt=bluesky></a>
-												</span>
-												<span>
-													<a class="social social-xxxx button" href="https://github.com/StephenRBerg" target="_new">
-														<img src="index_files/github.svg" alt=github></a>
-												</span>
+                                            <td class='td-cell'> 
+                                                <span>
+                                                    <a class="social social-xxxx button" href="https://www.linkedin.com/in/stephenrberg/" target="_new">
+                                                        <img src="index_files/linkedin.svg" alt=Linkedin></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xxxx button" href="https://bsky.app/profile/stephenrberg.com" target="_new">
+                                                        <img src="index_files/bluesky.svg" alt=bluesky></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xxxx button" href="https://github.com/StephenRBerg" target="_new">
+                                                        <img src="index_files/github.svg" alt=github></a>
+                                                </span>
 												
 												
-											</td>
-										</tr>
-										<tr>
+                                            </td>
+                                        </tr>
+                                        <tr>
 											<!-- Reviews + Secondary Social -->
-											<td class='td-cell'> 
-												<span>
-													<a class="social social-xxx button" href="https://letterboxd.com/stephenrberg/" target="_new">
-														<img src="index_files/letterboxd.svg" alt=letterboxd></a>
-												</span>
-												<span>
-													<a class="social social-xxx button" href="https://backloggd.com/u/stephenrberg/" target="_new">
-														<img src="index_files/backloggd.svg" alt=backloggd></a>
-												</span>
-												<span>
-													<a class="social social-xxx button" href="https://www.serializd.com/user/stephenrberg" target="_new">
-														<img src="index_files/serializd.svg" alt=serializd></a>
-												</span>
-												<span>
-													<a class="social social-xxx button" href="https://www.youtube.com/@StephenRBerg" target="_new">
-														<img src="index_files/youtube.svg" alt=youtube></a>
-												</span>
-											</td>
-										</tr>
-										<tr>
+                                            <td class='td-cell'> 
+                                                <span>
+                                                    <a class="social social-xxx button" href="https://letterboxd.com/stephenrberg/" target="_new">
+                                                        <img src="index_files/letterboxd.svg" alt=letterboxd></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xxx button" href="https://backloggd.com/u/stephenrberg/" target="_new">
+                                                        <img src="index_files/backloggd.svg" alt=backloggd></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xxx button" href="https://www.serializd.com/user/stephenrberg" target="_new">
+                                                        <img src="index_files/serializd.svg" alt=serializd></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xxx button" href="https://www.youtube.com/@StephenRBerg" target="_new">
+                                                        <img src="index_files/youtube.svg" alt=youtube></a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
 											<!-- Gaming + lame social-->
-											<td class='td-cell'> 
-												<span>
-													<a class="social social-xx button" href="https://www.threads.net/@stephenrberg" target="_new">
-														<img src="index_files/threads.svg" alt=threads></a>
-												</span>
-												<span>
-													<a class="social social-xx button" href="http://www.instagram.com/StephenRBerg/" target="_new">
-														<img src="index_files/instagram.svg" alt=instagram></a>
-												</span>
+                                            <td class='td-cell'> 
+                                                <span>
+                                                    <a class="social social-xx button" href="https://www.threads.net/@stephenrberg" target="_new">
+                                                        <img src="index_files/threads.svg" alt=threads></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xx button" href="http://www.instagram.com/StephenRBerg/" target="_new">
+                                                        <img src="index_files/instagram.svg" alt=instagram></a>
+                                                </span>
 												
-												<span>
-													<a class="social social-xx button" href="https://www.xbox.com/en-AU/play/user/SteveBerg" target="_new">
-														<img src="index_files/xbox.svg" alt=xbox></a>
-												</span>
-												<span>
-													<a class="social social-xx button" href="https://steamcommunity.com/id/SteveBerg/" target="_new">
-														<img src="index_files/steam.svg" alt=steam></a>
-												</span>
-												<span>
-													<a class="social social-xx button" href="https://discordapp.com/users/122260767612338177" target="_new">
-														<img src="index_files/discord.svg" alt=discord></a>
-												</span>
-											</td>
-										</tr>
-										<tr>
+                                                <span>
+                                                    <a class="social social-xx button" href="https://www.xbox.com/en-AU/play/user/SteveBerg" target="_new">
+                                                        <img src="index_files/xbox.svg" alt=xbox></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xx button" href="https://steamcommunity.com/id/SteveBerg/" target="_new">
+                                                        <img src="index_files/steam.svg" alt=steam></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-xx button" href="https://discordapp.com/users/122260767612338177" target="_new">
+                                                        <img src="index_files/discord.svg" alt=discord></a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
 											<!-- Retired -->
-											<td class='td-cell'>
+                                            <td class='td-cell'>
+                                                <span>
+                                                    <a class="social social-x button" href="http://www.facebook.com/stephenrberg" target="_new">
+                                                        <img src="index_files/facebook.svg" alt=Facebook></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-x button" href="https://mastodon.social/@StephenRBerg" target="_new">
+                                                        <img src="index_files/mastodon.svg" alt=mastodon></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-x button" href="https://www.tiktok.com/@StephenRBerg" target="_new">
+                                                        <img src="index_files/tiktok.svg" alt=youtube></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-x button" href="https://x.com/StephenRBerg" target="_new">
+                                                        <img src="index_files/x.svg" alt=x></a>
+                                                </span>
+                                                <span>
+                                                    <a class="social social-x button" href="https://www.reddit.com/user/stephenrberg/" target="_new">
+                                                        <img src="index_files/reddit.svg" alt=reddit></a>
+                                                </span>
 												<span>
 													<a class="social social-x button" href="http://www.facebook.com/stephenrberg" target="_new">
 														<img src="index_files/facebook.svg" alt=Facebook></a>
 												</span>
-												<span>
-													<a class="social social-x button" href="https://mastodon.social/@StephenRBerg" target="_new">
-														<img src="index_files/mastodon.svg" alt=mastodon></a>
-												</span>
-												<span>
-													<a class="social social-x button" href="https://www.tiktok.com/@StephenRBerg" target="_new">
-														<img src="index_files/tiktok.svg" alt=youtube></a>
-												</span>
-												<span>
-													<a class="social social-x button" href="https://x.com/StephenRBerg" target="_new">
-														<img src="index_files/x.svg" alt=x></a>
-												</span>
-												<span>
-													<a class="social social-x button" href="https://www.reddit.com/user/stephenrberg/" target="_new">
-														<img src="index_files/reddit.svg" alt=reddit></a>
-												</span>
-												<span>
-													<a class="social social-x button" href="http://www.facebook.com/stephenrberg" target="_new">
-														<img src="index_files/facebook.svg" alt=Facebook></a>
-												</span>
-											</td>
-										</tr>
-										<tr>
-											<td class='td-cell'>
-												<a class="button extras" href="ranes.html" target="_new">
-													<img src="index_files/NES.svg" title="NES Homebrew" />
-												</a>
-												<a class="button extras" href="movies.html" target="_new">
-													<img src="index_files/bluray.svg" title="Movie collection" />
-												</a>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class='td-cell'>
+                                                <a class="button extras" href="ranes.html" target="_new">
+                                                    <img src="index_files/NES.svg" title="NES Homebrew" />
+                                                </a>
+                                                <a class="button extras" href="movies.html" target="_new">
+                                                    <img src="index_files/bluray.svg" title="Movie collection" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
 					<td background="index_files/Untitled-1_10.webp" width="30px"></td> <!-- Right Edge -->
 				</tr>
 				<tr height = "30px"> <!-- Bottom Edge -->
 					<td background="index_files/Website_13.webp"></td>
-					<td background="index_files/Website_14.webp"></td>
-					<td background="index_files/Website_15.webp"></td>
-				</tr>
-			</table>
-		</div>
-	</body>
+                    <td background="index_files/Website_14.webp"></td>
+                    <td background="index_files/Website_15.webp"></td>
+                </tr>
+            </table>
+        </div>
+
+        <svg width="0" height="0" style="position: absolute;">
+		<defs>
+			<clipPath id="squircle-clip" clipPathUnits="objectBoundingBox">
+				<path d="M 0,0.5 C 0,0.1 0.1,0 0.5,0 C 0.9,0 1,0.1 1,0.5 C 1,0.9 0.9,1 0.5,1 C 0.1,1 0,0.9 0,0.5 Z" />
+			</clipPath>
+		</defs>
+	</svg>
+    </body>
 </html>
